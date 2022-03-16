@@ -10,7 +10,7 @@ The project relies on the [boston housing dataset](https://www.cs.toronto.edu/~d
 
 ## Exploratory data analysis
 
-## Predictons model
+## Selected model(s) for predictions
 
 ## Going further *(draf)*
 
