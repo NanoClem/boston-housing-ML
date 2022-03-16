@@ -1,5 +1,5 @@
 # boston-housing-ML
-A machine learning project for my training journey on the data-scientist career path.  
+A machine learning project, part of my training journey on the data-scientist career path.  
 
 ## Introduction
 
