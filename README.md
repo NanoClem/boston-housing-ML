@@ -4,7 +4,7 @@ A machine learning project for my training journey on the data-scientist career 
 ## Introduction
 
 ## About the dataset
-It relies on the [boston housing dataset](https://www.cs.toronto.edu/~delve/data/boston/bostonDetail.html), originally published by Harrison, D. and Rubinfeld, D.L. *'Hedonic prices and the demand for clean air'*, J. Environ. Economics & Management, vol.5, 81-102, 1978.
+The project relies on the [boston housing dataset](https://www.cs.toronto.edu/~delve/data/boston/bostonDetail.html), originally published by Harrison, D. and Rubinfeld, D.L. *'Hedonic prices and the demand for clean air'*, J. Environ. Economics & Management, vol.5, 81-102, 1978.
 
 ## Data-cleaning
 
