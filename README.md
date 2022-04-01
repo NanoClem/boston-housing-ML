@@ -1,5 +1,4 @@
-# 
-online-unfair-casino
+# online-unfair-casino
 A data-analysis and machine learning project, part of my journey to the data-scientist career.  
 
 ## Introduction
