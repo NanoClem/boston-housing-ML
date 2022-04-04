@@ -1,16 +1,15 @@
-# online-unfair-casino
+# life-expectancy-prediction
+
 A data-analysis and machine learning project, part of my journey to the data-scientist career.
 
 ## Introduction
-This project is inspired from the kaggle challenge [Online Unfair Casino](https://www.kaggle.com/code/andreylovyagin/online-unfair-casino-example/data).
+This project is inspired from the kaggle dataset [WHO national life expectancy](https://www.kaggle.com/datasets/mmattson/who-national-life-expectancy).
 
 ## About the dataset
 
-## Data-cleaning
+## EDA 
 
-## Exploratory data analysis
-
-## Selected model(s) for predictions
+## Modelization
 
 ## Going further *(draf)*
 
