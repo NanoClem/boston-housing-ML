@@ -110,8 +110,8 @@ Profiling regions can help us to identify what indicators raise or lower life_ex
 - **Hypothesis 3** : "An educated population significatively tends to live longer". h0 => **rejected**
 
 - **Hypothesis 4** : "Pop health has a significative impact on life exp".
-  - **4.1** : sanitary (basic_water)
-  - **4.2** : physical shape :
+  - **4.1** : sanitary (basic_water) => **h0 rejected**
+  - **4.2** : physical shape => **h0 rejected** BUT bmi and obesity may give false assumptions from what we saw before.
   - **4.3** : health coverage (measles, polio, diphtheria)
   - **4.4** : governments investments
 
