@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "life-exp-who"
+version = "0.1.0"
+description = "A data-science ML training project"
+authors = ["Clement Decoopman"]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.11"
+numpy = "^1.22.3"
+pandas = "^1.4.2"
+matplotlib = "^3.5.1"
+scikit-learn = "^1.0.2"
+missingno = "^0.5.1"
+seaborn = "^0.11.2"
+plotly-express = "^0.4.1"
+scikit-posthocs = "^0.6.7"
+scipy = "^1.8.0"
+
+[tool.poetry.dev-dependencies]
+black = "^22.3.0"
+ipykernel = "^6.13.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
