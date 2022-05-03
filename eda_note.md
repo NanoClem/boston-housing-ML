@@ -1,12 +1,3 @@
-## About the dataset
-
-### Columns
-
-- **gni_capita**: gross national income per capita.
-- **gghe-d**: domestic general government health expenditure (GGHE-D) as percentage of gross domestic product (GDP) (%)
-- **che_gdp**: current health expenditure (CHE) as percentage of gross domestic product (GDP) (%)
-- **une_poverty**: poverty headcount ratio at $1.90 a day (PPP) (% of population)
-
 ## 1. EDA
 
 ---
@@ -102,7 +93,6 @@ Profiling regions can help us to identify what indicators raise or lower life_ex
   - Education variables seem to separate pretty well all the different life exp cat => watch for feature selection
 
 ## 2. Hypothesis / Intuitions / Ideas
-
 ---
 
 - **Hypothesis 1** : "Their is a relation between life exp and regions. Same for countries". h0 => **rejected**.
@@ -116,6 +106,17 @@ Profiling regions can help us to identify what indicators raise or lower life_ex
   - **4.4** : governments investments
 
 ## 3. Pre-processing
+---
+
+## Pre-selection
+
+- **Missing values :** All variables having a missing rate over or equal to **80%** are automatically eliminated.
+
+- **EDA :** From what we saw in the EDA, some variables had almost no impact on the target or could mislead on interpretation (ex: alcohol being prevalent in regions/countries where life exp is high).
+
+- **Singificant cols :** basic_water col, mortality and standard of living indicators seem really significant with respect to the target.
+
+- **Columns kept:** region, country, adult_mortality, infant_mort, age1-4mort, une_poverty, une_gni, gni_capita, une_school, une_edu_spend, basic_water, bmi, age5-19thinness, age5-19obesity, measles, polio, diphtheria, gghe-d, che_gdp
 
 ## Feature engineering
 
@@ -124,7 +125,29 @@ Profiling regions can help us to identify what indicators raise or lower life_ex
 The main goal is to create a categorical feature from the target, thus shifting the problem into classification instead of regression.
 
 - most likely to be interpreted : predictions would be in a category instead of being numbers.
+
 - test some models with or without it as the target and compare results
+
+## Encoding
+
+### Categorical columns
+
+These correspond to regions and countries (not country code).
+I decided to apply a One-Hot encoding with a resulting sparse matrix (takes less memory).
+
+### Target
+
+I decided to use a simple label encoding, well-suited to target encoding. Another reason is because there is only 5 categories for the classificiation.
+
+## Scaling
+
+Numerical columns are subject to scaling, to make it easier for computations and future dim reductions. I used a standard scaling because it is less sensitive to outliers compared to min-max.
+
+## Dimensionality reduction (PCA)
+
+I did a PCA to check if it was possible to represent the dataset with less dimensions, without loosing too much informations (~80% of explained variance). Turns out we can get by with 5 dimensions.
+
+![PCA result](./figures/PCA_results.png)
 
 ## 4. Feature selection
 
@@ -134,4 +157,7 @@ The main goal is to create a categorical feature from the target, thus shifting 
 
 - This dataset doesn't provide any data about political conflicts or wars => can affect gradually a country/region life expectancy
 - The ML model is very sensible to noise => deadly natural disasters(ex : 2010 Haiti seism outlier)
+- Too few occurences for each country => harder to profile life exp => harder to train models
+  - some (encoded) countries may not be in trainset when doing a train/test split
+  - number of k-fold shouldn't exceed the number of occurences per country => risk to not have every country per fold.
 - More data for some regions could help to improve the model performance
